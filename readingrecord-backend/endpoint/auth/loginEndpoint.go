@@ -9,7 +9,7 @@ func LoginEndpoint(c *gin.Context) {
 	username := c.Request.FormValue("username")
 	password := c.Request.FormValue("password")
 
-	signedToken, err := jwtFunction.JwtGenerateToken(username, password)
+	signedToken, err := jwtFunction.JwtConfirmCredential(username, password)
 
 	if err != nil {
 		c.JSON(401, gin.H{})

@@ -8,10 +8,7 @@ import (
 	"github.com/dgrijalva/jwt-go"
 )
 
-func JwtGenerateToken(username string, password string) (string, error) {
-	/*TODO Implement check user credential
-	...
-	*/
+func JwtGenerateToken(username string) (string, error) {
 
 	claims := model.JwtClaims{
 		username,
@@ -28,5 +25,5 @@ func JwtGenerateToken(username string, password string) (string, error) {
 		return "", errors.New("jwt is expired")
 	}
 
-	return signedToken, nil
+	return signedToken, err
 }

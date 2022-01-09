@@ -12,13 +12,14 @@ func ValidateDemoEndpoint(c *gin.Context) {
 	if token == "" {
 		c.JSON(401, gin.H{})
 	} else {
-		username, err := jwtFunction.JwtValidateToken(token)
+		username, token, err := jwtFunction.JwtValidateToken(token)
 		if err != nil {
 			fmt.Print(err.Error())
 			c.JSON(401, gin.H{})
 		} else {
 			c.JSON(200, gin.H{
-				"Username": username,
+				"Username":     username,
+				"access_token": token,
 			})
 		}
 	}
