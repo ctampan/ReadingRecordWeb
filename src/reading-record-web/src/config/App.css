@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar {
+  background-color: #612897;
+  align-content: flex-end;
+}
+
+.navbar-link {
+  display: flex;
+}
+
+/* https://colorhunt.co/palette/ff008ed227796128970c1e7f */
